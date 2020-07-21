@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #cl{
+            text-align: center;
+            color:#0f0;
+            font-weight: bold;
+            height: 50px;
+            font-size: 30px;
+            background-color:#000;
+            border-radius: 10px;
+        }
+       
+    </style>
+    <script>
+        function clock(){
+            var date=new Date();
+            var hr=date.getHours();
+            var min=date.getMinutes();
+            var sec=date.getSeconds();
+
+            if(hr<10){
+                hr="0"+hr;
+            }
+            if(min<10){
+                min="0"+min;
+            }
+            if(sec<10){
+                sec="0"+sec;
+            }
+
+            var hours=hr+":"+min+":"+sec;
+            document.getElementById('cl').value=hours;
+
+        }
+
+        var tim=setInterval(clock,1000);
+    </script>
+</head>
+<body>
+    <label>Working Digital Clock</label>
+    <input type="text" id="cl">
+</body>
+</html>
